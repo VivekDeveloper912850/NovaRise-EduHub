@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+	color-scheme: light;
+	font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+	background: #ffffff;
+}
+
+:root.dark {
+	color-scheme: dark;
+	background: #020617;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	min-width: 320px;
+	margin: 0;
+	background: #ffffff;
+	color: #0f172a;
+}
+
+/* The landing page keeps its dark-first utility classes; these tokens remap the
+   shared surfaces and type colors when the single root theme is light. */
+:root:not(.dark) {
+	--page-bg: #f8fafc;
+	--section-bg: #ffffff;
+	--section-muted: #f1f5f9;
+	--surface: #ffffff;
+	--surface-muted: #f8fafc;
+	--border: #dbe4f0;
+	--border-strong: #cbd5e1;
+	--heading: #0f172a;
+	--body-text: #334155;
+	--muted-text: #64748b;
+}
+
+:root:not(.dark) body {
+	background: var(--page-bg);
+	color: var(--heading);
+}
+
+:root.dark body {
+	background: #020617;
+	color: #f8fafc;
+}
+
+:root:not(.dark) .bg-slate-950,
+:root:not(.dark) [class~="bg-slate-950/50"],
+:root:not(.dark) [class~="bg-slate-950/60"],
+:root:not(.dark) [class~="bg-slate-950/80"] {
+	background-color: var(--page-bg) !important;
+}
+
+:root:not(.dark) .bg-slate-900,
+:root:not(.dark) [class~="bg-slate-900/50"],
+:root:not(.dark) [class~="bg-slate-900/60"],
+:root:not(.dark) [class~="bg-slate-900/70"],
+:root:not(.dark) [class~="bg-slate-900/95"] {
+	background-color: var(--section-muted) !important;
+}
+
+:root:not(.dark) [class~="bg-slate-800"] {
+	background-color: #e2e8f0 !important;
+}
+
+:root:not(.dark) [class~="border-slate-800"],
+:root:not(.dark) [class~="border-slate-700"] {
+	border-color: var(--border) !important;
+}
+
+:root:not(.dark) [class~="border-white/10"] {
+	border-color: rgb(148 163 184 / 0.28) !important;
+}
+
+:root:not(.dark) [class~="text-white"] {
+	color: var(--heading) !important;
+}
+
+:root:not(.dark) [class~="text-slate-200"],
+:root:not(.dark) [class~="text-slate-300"] {
+	color: var(--body-text) !important;
+}
+
+:root:not(.dark) [class~="text-slate-400"],
+:root:not(.dark) [class~="text-slate-500"],
+:root:not(.dark) [class~="text-slate-600"] {
+	color: var(--muted-text) !important;
+}
+
+:root:not(.dark) [class~="text-indigo-200"],
+:root:not(.dark) [class~="text-indigo-300"],
+:root:not(.dark) [class~="text-indigo-400"] {
+	color: #4f46e5 !important;
+}
+
+:root:not(.dark) [class~="text-cyan-200"],
+:root:not(.dark) [class~="text-cyan-300"] {
+	color: #0e7490 !important;
+}
+
+:root:not(.dark) [class~="text-emerald-200"],
+:root:not(.dark) [class~="text-emerald-300"] {
+	color: #047857 !important;
+}
+
+:root:not(.dark) [class~="text-amber-300"] {
+	color: #b45309 !important;
+}
+
+/* Preserve white labels on primary buttons and brand marks. */
+:root:not(.dark) [class~="bg-indigo-500"][class~="text-white"],
+:root:not(.dark) [class~="bg-indigo-600"][class~="text-white"] {
+	color: #ffffff !important;
+}
+
+:root:not(.dark) [class~="hover:bg-slate-50"]:hover {
+	background-color: #f1f5f9 !important;
+}
+
+:root:not(.dark) [class~="hover:bg-slate-900"]:hover {
+	background-color: #f1f5f9 !important;
+}
+
+:root:not(.dark) [class~="hover:text-slate-950"]:hover,
+:root:not(.dark) [class~="hover:text-white"]:hover {
+	color: var(--heading) !important;
+}
+
+:root:not(.dark) [class~="focus-visible:ring-offset-slate-950"]:focus-visible {
+	--tw-ring-offset-color: #ffffff;
+}
+
+:root:not(.dark) .bg-gradient-to-br {
+	background-image: linear-gradient(to bottom right, rgb(99 102 241 / 0.1), #ffffff, #f1f5f9) !important;
+}
+
+:root:not(.dark) input,
+:root:not(.dark) textarea {
+	background-color: #ffffff;
+	border-color: var(--border-strong);
+	color: var(--heading);
+}
+
+:root:not(.dark) input::placeholder,
+:root:not(.dark) textarea::placeholder {
+	color: #94a3b8;
+}

@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@keyframes hero-fade-up {
+	from { opacity: 0; transform: translateY(18px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-6px); }
+}
+
+@keyframes why-fade-up {
+	from { opacity: 0; transform: translateY(10px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes process-fade-up {
+	from { opacity: 0; transform: translateY(12px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes about-fade-up {
+	from { opacity: 0; transform: translateY(12px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes verification-fade-up {
+	from { opacity: 0; transform: translateY(12px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes faq-fade-up {
+	from { opacity: 0; transform: translateY(12px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes contact-fade-up {
+	from { opacity: 0; transform: translateY(10px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes brand-hero-fade-up {
+	from { opacity: 0; transform: translateY(15px) scale(0.98); }
+	to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hero-fade-up {
+	animation: hero-fade-up 700ms ease-out both;
+}
+
+.hero-float {
+	animation: hero-float 6s ease-in-out 800ms infinite;
+}
+
+.why-fade-up {
+	animation: why-fade-up 550ms ease-out both;
+}
+
+.process-fade-up {
+	animation: process-fade-up 550ms ease-out both;
+}
+
+.about-fade-up {
+	animation: about-fade-up 550ms ease-out both;
+}
+
+.verification-fade-up {
+	animation: verification-fade-up 550ms ease-out both;
+}
+
+.faq-fade-up {
+	animation: faq-fade-up 550ms ease-out both;
+}
+
+.contact-fade-up {
+	animation: contact-fade-up 550ms ease-out both;
+}
+
+.brand-hero-fade-up {
+	animation: brand-hero-fade-up 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero-fade-up,
+	.hero-float,
+	.why-fade-up,
+	.process-fade-up,
+	.about-fade-up,
+	.verification-fade-up,
+	.faq-fade-up,
+	.contact-fade-up,
+	.brand-hero-fade-up {
+		animation: none;
+	}
+}

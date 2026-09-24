@@ -1,0 +1,60 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /applications/{applicationId} {
+      allow create: if request.resource.data.keys().hasOnly([
+        'applicationId',
+        'fullName',
+        'gender',
+        'dateOfBirth',
+        'mobileNumber',
+        'whatsappNumber',
+        'email',
+        'collegeName',
+        'course',
+        'branch',
+        'registrationNumber',
+        'yearSemester',
+        'selectedProgram',
+        'domain',
+        'mode',
+        'learningType',
+        'source',
+        'additionalMessage',
+        'status',
+        'createdAt'
+      ])
+      && request.resource.data.applicationId is string
+      && request.resource.data.applicationId.matches('NR-2026-[A-F0-9]{8}')
+      && request.resource.data.fullName is string
+      && request.resource.data.fullName.size() > 0
+      && request.resource.data.fullName.size() <= 120
+      && request.resource.data.gender is string
+      && request.resource.data.gender.size() > 0
+      && request.resource.data.mobileNumber is string
+      && request.resource.data.mobileNumber.size() > 0
+      && request.resource.data.email is string
+      && request.resource.data.email.size() > 0
+      && request.resource.data.collegeName is string
+      && request.resource.data.collegeName.size() > 0
+      && request.resource.data.course is string
+      && request.resource.data.course.size() > 0
+      && request.resource.data.branch is string
+      && request.resource.data.branch.size() > 0
+      && request.resource.data.registrationNumber is string
+      && request.resource.data.registrationNumber.size() > 0
+      && request.resource.data.yearSemester is string
+      && request.resource.data.yearSemester.size() > 0
+      && request.resource.data.selectedProgram is string
+      && request.resource.data.selectedProgram.size() > 0
+      && request.resource.data.domain is string
+      && request.resource.data.mode == 'Online'
+      && request.resource.data.learningType == 'Project-Based'
+      && request.resource.data.status == 'New'
+      && request.resource.data.createdAt == request.time;
+
+      allow read, update, delete: if false;
+    }
+  }
+}
