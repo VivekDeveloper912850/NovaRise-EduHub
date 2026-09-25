@@ -77,7 +77,7 @@ function Navbar() {
       <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-5 sm:px-8 lg:px-10" aria-label="Main navigation">
         <a href="#home" onClick={handleHomeClick} className="group flex shrink-0 items-center gap-3 text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-4 dark:text-white dark:focus-visible:ring-offset-slate-950" aria-label="Nova Rise home">
           <BrandLogo variant="navbar" className="transition-transform duration-200 group-hover:-translate-y-0.5" />
-          <span className="text-[17px] font-semibold tracking-[-0.02em]">NOVARISE</span>
+          <span className="text-[17px] font-semibold tracking-[-0.02em]">NovaRise</span>
         </a>
 
         <div className="hidden items-center gap-1 lg:flex">
